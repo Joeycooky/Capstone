@@ -58,3 +58,8 @@ The negative sentiment can be grouped into 4 different topic where
 
 - The future scope of this project will be including building a topic classifier to filter negative feedback into several topic then redirect them to different teams.
 - In the future, if we got more data, it is possible that the suitable number of topic may change. At that time, we can recluster them and retrain the topic classifier.
+
+##Resource
+1. [Sentiment analysis using machine learning (main notebook)](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/code/EDA%20%2B%20ML.ipynb)
+1. [Topic modeling to categorize the negative sentiment into several subcategories](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/code/Topic_Modeling.ipynb)
+1. [Sentiment analysis using deep learning (optional)](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/code/EDA%20%2B%20DL%20(Extra).ipynb)
