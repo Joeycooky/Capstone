@@ -6,7 +6,12 @@ An airline industry — one of the world most competitive market—have been exp
 
 
 **List of model used in the project:**
-[Result]
+![Result](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/model_outlines.png)
+
+1. Metamodel : to handle metadata such as `tweet_created` (which was engineered into days_of_week and part_of_day), `char_length` and `word_length`
+1. Textual model : to handle tweet messages in the columns `text`
+
+Both model will be trained using `LogisticRegression` and `RandomForestClassifier`, finally, the accuracy model (tuned by GridSearchCV) will be selected as a candidate model.
 
 
 **Evaluation metrics:**  
@@ -24,15 +29,26 @@ The performance of our sentiment classifier model will be compared against the r
 
 ## Executive Summary
 
-![Overall](https://github.com/Joeycooky/DSI_Project_2/blob/main/images/coef_overall.png)
+![Overall](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/overall_performance.png)
 
-Among all models in our study, an ElasticNet regressor with polynomial has the best predictive performance (evaluated by RMSE). However, considering interpretability, the simpler version without polynomial transformation is much easier to interpret and be understood by non-technical user.
-Although numerous factors impacted the property value, some of the factors worth mentioning are ...
-- Although price tend to increase with the total area of the house, living area is the most expensive part of it.
-- From the perspective of property reseller, while overall quality directly means high resell price, we could consider buying an average quality house and focus on renovation to boost its price.
-- With a limited budget, focus on kitchen renovation and refurbishing external appearance by repainting.
-- If there is no garage, don't waste your time building one. It won't add much value to the house.
+- From the metadata including `days of week`, `parts of day`, `char_length`, `word_length` , the metamodel (LogisticRegression) can learned and achieved 72.1 % accuracy
+- From the textual data, the texual model can achieved 83.4% accuracy
+- The combined model (which take prediction of both metamodel and textual model as input achieved 84.2% accuracy, an only marginal improvement from the textual model
+- The combined model have given weight of 0.05% to the metamodel and 99.95% to the texual model which mean that almost all knowledge and wisdom, the model has acquired from the data, came from the text not metadata.
 
-for detailed analysis please go to ...
-1. <a href = https://github.com/Joeycooky/DSI_Project_2/blob/main/Code/EDA.ipynb > Exploratory Data Analysis </a>
-1. <a href = https://github.com/Joeycooky/DSI_Project_2/blob/main/Code/model_polyorder2.ipynb > Model, Prediction and Conclusion </a>
+![Keywords](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/top20_kw.png)
+
+By looking at the log coefficient ...
+- the top 20 keywords describing negative sentiment as plotted in red shaded bars
+- the top 20 keywords indicating positive sentiment as plotted in blue shaded bars
+
+We can see that tweets containing keywords such as `[hour, hr, delayed, delay, hold, cancelled] and/or [worst, fail, suck, rude, terrible, bad, disappointed]` will likely to be a negative sentiment tweet
+
+![Topic](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/topic.png)
+
+The negative sentiment can be grouped into 4 different topic where
+
+1. Topic 1 : could be flight related problems since it contains keywords ['flight', 'delay']
+1. Topic 2 : could be luggage related problem since it includes keywords ['luggage', 'agent']
+1. Topic 3 : could be reservation / ticketing problems because it have related keywords such as ['reservation', 'phone', 'ticket']
+1. Topic 4 : could be customer services problems since it contains ['call', 'service', 'customer', 'response']
