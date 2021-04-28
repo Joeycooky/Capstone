@@ -52,3 +52,9 @@ The negative sentiment can be grouped into 4 different topic where
 1. Topic 2 : could be luggage related problem since it includes keywords ['luggage', 'agent']
 1. Topic 3 : could be reservation / ticketing problems because it have related keywords such as ['reservation', 'phone', 'ticket']
 1. Topic 4 : could be customer services problems since it contains ['call', 'service', 'customer', 'response']
+
+## Future scope
+![future_scope](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/future_scope.png)
+
+- The future scope of this project will be including building a topic classifier to filter negative feedback into several topic then redirect them to different teams.
+- In the future, if we got more data, it is possible that the suitable number of topic may change. At that time, we can recluster them and retrain the topic classifier.
