@@ -6,7 +6,7 @@ An airline industry — one of the world most competitive market—have been exp
 
 
 **List of model used in the project:**
-![Result](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/model_outlines.png)
+![Result](https://github.com/Joeycooky/DSI_CapstoneProject/blob/main/images/sentiment_classifier_result.png)
 
 1. Metamodel : to handle metadata such as `tweet_created` (which was engineered into days_of_week and part_of_day), `char_length` and `word_length`
 1. Textual model : to handle tweet messages in the columns `text`
